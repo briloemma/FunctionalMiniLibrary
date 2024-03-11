@@ -2,8 +2,8 @@ let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(first(nums));
 console.log(last(nums));
 console.log(skip(nums, 5));
-console.log(take(nums, 10));
-console.log(asChain(nums).skip(2).take(13).value());
+console.log(take(nums, 2));
+console.log(asChain(nums).skip(2).take(3).value());
 
 
 function first(arr) {
@@ -44,8 +44,8 @@ function take(arr, number) {
         throw new Error('Invalid input');
     }
     else {
-        let newArr = arr.slice();
-        newArr.push(number);
+        let newArr = arr.slice(0, number);
+        //newArr.push(number);
         return newArr;
     }
 }
